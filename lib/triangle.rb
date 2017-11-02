@@ -8,11 +8,11 @@ class Triangle
     @sides.sort!
     binding.pry
     if (@sides[0] <= 0 || (@sides[0] + @sides[1] <= @sides[2]))
-      begin
+    #  begin
         raise TriangleError
-      rescue TriangleError => error
-        puts error.message
-      end
+    #  rescue TriangleError => error
+    #    puts error.message
+    #  end
     end
   end
 
