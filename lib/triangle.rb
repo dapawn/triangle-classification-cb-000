@@ -1,3 +1,34 @@
+require "pry"
 class Triangle
-  # write code here
+  def initialize(side1,side2,side3)
+    @sides = []
+    @sides[0] = side1
+    @sides[1] = side2
+    @sides[2] = side3
+    @sides.sort!
+  #  binding.pry
+    if (@sides[0] <= 0 || (@sides[0] + @sides[1] <= @sides[2]))
+    #  begin
+        raise TriangleError
+    #  rescue TriangleError => error
+    #    puts error.message
+    #  end
+    end
+  end
+
+  def kind
+    if (@sides[0] == @sides[1] && @sides[1] == @sides[2])
+      :equilateral
+    elsif (@sides[1] == @sides[2])
+      :isosceles
+    else
+      :scalene
+    end
+  end
+end
+
+class TriangleError < StandardError
+  def message
+    "All sides have to be greater than 0, and sum of any 2 sides greater than the third."
+  end
 end
