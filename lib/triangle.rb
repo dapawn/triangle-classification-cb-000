@@ -29,6 +29,6 @@ end
 
 class TriangleError < StandardError
   def message
-    "All sides have to be greater than 0."
+    "All sides have to be greater than 0, and sum of any 2 sides greater than the third."
   end
 end
