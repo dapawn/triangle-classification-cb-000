@@ -6,7 +6,7 @@ class Triangle
     @sides[1] = side2
     @sides[2] = side3
     @sides.sort!
-    binding.pry
+  #  binding.pry
     if (@sides[0] <= 0 || (@sides[0] + @sides[1] <= @sides[2]))
     #  begin
         raise TriangleError
